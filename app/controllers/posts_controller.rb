@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:edit, :update, :show, :delete]
 
+  before_action :authenticate_admin!, except: [:index, :show]
+
   # Index action to render all posts
   def index
     @posts = Post.all
@@ -13,7 +15,7 @@ class PostsController < ApplicationController
 
   # Create action saves the post into database
   def create
-    @post = Post.new
+    @post = Post.new(post_params)
     if @post.save(post_params)
       flash[:notice] = "Successfully created post!"
       redirect_to post_path(@post)
@@ -31,7 +33,7 @@ class PostsController < ApplicationController
   def update
     if @post.update_attributes(post_params)
       flash[:notice] = "Successfully updated post!"
-      redirect_to post_path(@posts)
+      redirect_to post_path(@post)
     else
       flash[:alert] = "Error updating post!"
       render :edit
@@ -44,6 +46,7 @@ class PostsController < ApplicationController
 
   # The destroy action removes the post permanently from the database
   def destroy
+    @post = Post.find(params[:id])
     if @post.destroy
       flash[:notice] = "Successfully deleted post!"
       redirect_to posts_path
