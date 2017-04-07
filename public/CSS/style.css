@@ -1,0 +1,282 @@
+/******************************************************************************
+  Caleb Barnwell Porfolio CSS                                 November 12, 2016
+  Copyright Caleb Barnwell
+  Written by: Caleb Barnwell
+ ******************************************************************************/
+
+/* General Content
+____________________________________ */
+.main{padding-top:3%;}
+.row{padding: 2% 0;}
+.blue{background-color: #292723;}
+.red{background-color: #141311;}
+.green{background-color: #141311;}
+.comp{text-align: center;}
+.whiteText{color: #fff;}
+.purple{background-color: #141311;}
+.orange{background-color: #141311;}
+.yellow{background-color: #141311;}
+.lightBlue{background-color: #141311;}
+
+hr {
+    height: 1px;
+    border: 0;
+    border-top: 3px solid #A2482E;
+    margin: 1em 0;
+    width: auto;
+}
+
+body {
+    background-color: #686766;
+}
+
+h3 {
+	  color: #fff;
+}
+
+h2 {
+	  color: #fff;
+}
+
+h1 {
+	  color: #fff;
+}
+
+p {
+	  color: #fff;
+}
+
+table{
+	color: #fff;
+}
+
+figcaption{
+	color: #fff;
+}
+
+ul{
+	color: #fff;
+}
+
+ol{
+	color: #fff;
+}
+
+
+/*Old Color Scheme
+blue{background-color: #355c7d;}
+.red{background-color: #ff9999;}
+.green{background-color: #66ff99;}
+.comp{text-align: center;}
+.whiteText{color: #fff;}
+.purple{background-color: #b380ff;}
+.orange{background-color: #ff944d;}
+.yellow{background-color: #ffff66;}
+.lightBlue{background-color: #99ccff;}
+_______________________
+
+/* Header & Navigation
+____________________________________ */
+header.main_nav{
+	padding: 1% 0;
+	display: block;
+}
+.logo{
+	margin: 5% auto;
+	text-align: center;
+}
+.logo a{
+	font-size: 3em;
+	color: #fff;
+	text-decoration: none;
+	border: 3px solid #fff;
+	padding: 7px 10px 0 10px;
+	margin: 0 auto;
+	font-family: 'Cinzel', sans-serif;
+}
+
+@media screen and (max-width: 780px) {
+   .logo a{
+	font-size: 150%;
+	margin: 0;
+	}
+}
+
+.logo a:hover{
+	background-color: #fff;
+	color: #A2482E; 
+}
+
+.logoImg img{
+	margin: 5%;
+	height: auto;
+	width: 60%;
+}
+
+.topCap{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1em;
+	color: #fff;
+	text-align: center;
+}
+
+
+ul.bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	z-index: 500;
+}
+
+li.barEl {
+    float: left;
+}
+
+li a.navAddress {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 780px) {
+   li a.navAddress{
+   	display: none;
+   }
+}
+
+/* Change the link color to #111 (black) on hover */
+li a.navAddress:hover {
+    background-color: #111;
+}
+
+/* Body
+____________________________________ */
+.course{
+	padding-top: 80px;
+	text-align:center;
+	display: block;
+}
+
+/* Projects
+____________________________________ */
+.projects{
+	padding-top: 70px;
+	text-align:center;
+	display: block;
+
+}
+.noDec h3 a{
+	text-decoration: none;
+	color: #fff;
+	position: relative;
+	z-index: 2;
+}
+.noDec h3 a:hover{
+	  color: #A2482E;
+}
+.noDec p{
+	margin-left: 10%;
+	margin-right: 10%;
+}
+.awards{
+	padding-top: 70px;
+	text-align:center;
+	display: block;
+}
+
+/* Skills
+____________________________________ */
+.skills{
+	padding-top: 70px;
+	text-align:center;
+	display: block;
+}
+
+.employment{
+	padding-top: 70px;
+	text-align:center;
+	display: block;
+}
+.activities{
+	padding-top: 70px;
+	text-align:center;
+	display: block;
+}
+img.size {
+    height: auto; 
+    width: 40%; 
+}
+
+@media screen and (max-width: 780px) {
+   img.size {
+    height: auto; 
+    width: 75%; 
+	}
+}
+
+.tableWidth{
+	overflow: auto;
+	overflow-y: hidden;
+}
+
+/* Typography
+____________________________________ */
+body{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.75em;
+	color: #000;
+}
+h1{
+	font-family: 'Orbitron', cursive;
+	font-size: 3em;
+	margin: 0.67em;
+}
+
+
+/* Footer
+____________________________________ */
+
+ul.social{
+	display: block;
+	margin: 5% 0;
+	list-style-type: none;
+	text-align: center;
+}
+
+ul.social li{
+	font-size: 2em;
+	display: inline;
+	padding: 0 2%;
+}
+ul.social li a{
+	color: #fff;
+	z-index: 1;
+	position: relative;
+}
+
+ul.social li.twitter a:hover{color: rgb(0,172,237);}
+ul.social li.instagram a:hover{color: rgb(251,173,80);}
+ul.social li.facebook a:hover{color: rgb(59,89,152);}
+ul.social li.github a:hover{color: rgb(0,0,0);}
+ul.social li.linkedin a:hover{color: rgb(0,123,182);}
+ul.social li.email a:hover{color: rgb(221,75,57);}
+
+p.copyright{
+	text-align: center;
+	color: #ccc;
+	font-size: 1em;
+}
+
+img.copyright{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

@@ -1,0 +1,33 @@
+.employment h2{
+	transform-style: preserve-3d;
+	transform: perspective(800px);
+	transition: all 0.8s ease;
+}
+.employment h3{
+	transform-style: preserve-3d;
+	transform: perspective(800px);
+	transition: all 0.8s ease;
+}
+.employment ul{
+	transform-style: preserve-3d;
+	transform: perspective(800px);
+	transition: all 0.8s ease;
+}
+.employment ol{
+	transform-style: preserve-3d;
+	transform: perspective(800px);
+	transition: all 0.8s ease;
+}
+
+h2.hiddenEmp{
+	opacity: 0;
+	transform: translate3d(0, 0, 400px) rotateY(-40deg);
+}
+p.hiddenEmp{
+	opacity: 0;
+	transform: translate3d(0, 0, 400px) rotateY(40deg);
+}
+h3.hiddenEmp{
+	opacity: 0;
+	transform: translate3d(0, 0, 400px) rotateY(40deg);
+}
