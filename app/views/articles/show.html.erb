@@ -15,7 +15,7 @@
   <% end %>
 </p>
 
-<p><%= @article.body %></p>
+<div class="article_body"><%= raw @article.body %></div>
 
 <% if logged_in? %>
 <%= link_to "Edit Article", edit_article_path(@article) %>
