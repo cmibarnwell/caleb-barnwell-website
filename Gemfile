@@ -39,6 +39,7 @@ gem 'sorcery'
 gem 'ckeditor'
 gem 'simple_form'
 gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 
