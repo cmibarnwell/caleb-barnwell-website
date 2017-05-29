@@ -29,6 +29,9 @@ html, body
 h1, h3, h2, p, table, figcaption, ul, ol, a, li
   color: #fff
 
+h4, h5
+  color: #666666
+
 ul
   list-style-position: inside
 
@@ -38,6 +41,7 @@ h1
 body
   background-color: #141311
   margin: 0 5%
+  position: relative
 
 hr
   height: 1px
@@ -90,14 +94,21 @@ h1
  * ____________________________________
  */
 nav
-  background-color: #333
-
+  a
+    text-decoration: none
+    &:hover
+      text-decoration: none
+    &:active
+      text-decoration: none
+    &:focus
+      text-decoration: none
+      color: #666666
 /**
  * Home
  * ____________________________________
  */
 
-.logo
+.logo-word
   margin: 5% auto
   a
     font-size: 3em

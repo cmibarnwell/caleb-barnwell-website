@@ -1,34 +1,21 @@
 <nav>
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Caleb Barnwell</a>
-    </div>
-    <div class="collapse navbar-collapse" id="navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'About', root_url+'pages/about' %></li>
-        <li><%= link_to 'Projects', root_url+'pages/projects' %></li>
-        <li><%= link_to 'Education', root_url+'pages/education' %></li>
-        <li><%= link_to 'Employment', root_url+'pages/employment' %></li>
-        <li><%= link_to 'Awards', root_url+'pages/awards' %></li>
-        <% if logged_in? %>
-            <!--This block is only visible to signed in admins -->
-            <li><%= link_to 'New Post', new_article_path %></li>
-            <li><%= link_to 'Blog', articles_path  %></li>
-            <li><%= link_to 'Logout', logout_path %></li>
-            <!-- The block ends here -->
-        <% else %>
-            <li><%= link_to 'Blog', articles_path  %></li>
-            <li><%= link_to 'Login', login_path  %></li>
-        <% end %>
-      </ul>
-    </div>
+  <div class="topnav" id="myTopnav">
+    <%= link_to 'Home', root_path %>
+    <%= link_to 'About', root_url+'pages/about' %>
+    <%= link_to 'Projects', root_url+'pages/projects' %>
+    <%= link_to 'Education', root_url+'pages/education' %>
+    <%= link_to 'Employment', root_url+'pages/employment' %>
+    <%= link_to 'Awards', root_url+'pages/awards' %>
+    <% if logged_in? %>
+      <!--This block is only visible to signed in admins -->
+      <%= link_to 'New Post', new_article_path %>
+      <%= link_to 'Blog', articles_path  %>
+      <%= link_to 'Logout', logout_path %>
+      <!-- The block ends here -->
+    <% else %>
+      <%= link_to 'Blog', articles_path  %>
+      <%= link_to 'Login', login_path  %>
+    <% end %>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
 </nav>

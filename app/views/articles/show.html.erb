@@ -1,29 +1,37 @@
+<div class="text-center">
 <h1><%= @article.title %></h1>
 
 <h4>Posted <%= distance_of_time_in_words_to_now(@article.created_at) %> ago.</h4>
 
-<p>
+<h4>
   Tags:
   <% @article.tags.each do |tag| %>
     <%= link_to tag.name, tag_path(tag) %>
   <% end %>
-</p>
+</h4>
 
 <p>
+  <div class="art-img">
   <% if @article.image.exists? %>
       <%= image_tag @article.image.url %><br/>
   <% end %>
+  </div>
 </p>
 
 <div class="article_body"><%= raw @article.body %></div>
 
-<% if logged_in? %>
-<%= link_to "Edit Article", edit_article_path(@article) %>
-<%= link_to "Delete Article", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
-<%= link_to "Return to Home", articles_path %>
-<% end %>
+<h4>
+  <% if logged_in? %>
+  <%= link_to "Edit Article", edit_article_path(@article) %>
+  <%= " | " %>
+  <%= link_to "Delete Article", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
+  <%= " | " %>
+  <%= link_to "Return to Home", articles_path %>
+  <% end %>
+</h4>
 
 <%= render partial: 'comments/form' %>
 
 <h3>Comments (<%= @article.comments.size %>):</h3>
 <%= render partial: 'articles/comment', collection: @article.comments.reverse %>
+</div>
