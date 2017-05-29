@@ -13,6 +13,11 @@
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'About', root_url+'pages/about' %></li>
+        <li><%= link_to 'Projects', root_url+'pages/projects' %></li>
+        <li><%= link_to 'Education', root_url+'pages/education' %></li>
+        <li><%= link_to 'Employment', root_url+'pages/employment' %></li>
+        <li><%= link_to 'Awards', root_url+'pages/awards' %></li>
         <% if logged_in? %>
             <!--This block is only visible to signed in admins -->
             <li><%= link_to 'New Post', new_article_path %></li>

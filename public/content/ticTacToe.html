@@ -1,0 +1,265 @@
+<html><head>
+<title>Tic Tac Toe: Full Game</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/9af0bce93490c0aae3c0e6d2d6975652bb082d4e/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Tic Tac Toe: Full Game</h1>
+
+
+
+<canvas width="400" height="400" class="codehs-editor-canvas"></canvas>
+
+
+<script>
+window.onload = function() {
+
+    var WIDTH = 400;
+var HEIGHT = 400;
+setSize(WIDTH, HEIGHT);
+
+var WINNING_LINE_WIDTH = 10;
+var WINNING_LINE_COLOR = Color.red;
+var track= new Grid(3,3);
+var count=0;
+var col,row,rcheck,ccheck,ddcheck,udcheck;
+
+function start(){
+	lineDrawer();
+	mouseClickMethod(handleClick);
+}
+
+function lineDrawer(){
+    for(var i=1;i<3;i++){
+        var x1= (getWidth()/3)*i;
+        var vert=new Line(x1,0,x1,getHeight());
+        add(vert);
+    }
+    
+    for(var i=1;i<3;i++){
+        var y1= (getHeight()/3)*i;
+        var horiz=new Line(0,y1,getWidth(),y1);
+        add(horiz);
+    }
+    
+}
+
+
+function handleClick(e){
+    var row=getRowForClick(e.getY());
+    var col=getColForClick(e.getX());
+    if(track.get(row,col)==null){
+        if(count%2==0){
+        drawX(row,col);
+        }else{
+        drawO(row,col);
+        }
+        count++;
+    }
+    var use1=winnerInRow(row);
+    var use2=winnerInCol(col);
+    var use3=winnerInDownDiagonal();
+    var use4=winnerInUpDiagonal();
+    if(use1||use2||use3||use4){
+        println("You win!");
+    }
+}
+
+function getRowForClick(y){
+    var check1=getHeight()/3
+    var check2=(getHeight()/3)*2
+    var check3=(getHeight())
+    
+    if(y>0&&y<check1){
+        row=0;
+    }else if(y>check1&&y<check2){
+        row=1;
+    }else if(y>check2&&y<check3){
+        row=2;
+    }
+    println(row);
+    println(row);
+    return row;
+}
+
+function getColForClick(x){
+    var check1=getWidth()/3
+    var check2=(getWidth()/3)*2
+    var check3=getWidth()
+    
+    if(x>0&&x<check1){
+        col=0;
+    }else if(x>check1&&x<check2){
+        col=1;
+    }else if(x>check2&&x<check3){
+        col=2;
+    }
+    println(col);
+    println(col);
+    return col;
+}
+
+function drawX(row, col){
+    var useX=(getWidth()/3)
+    var useY=(getHeight()/3)
+    var lx=(useX*col)+10;
+    var ly=(useY*row)+10;
+    var lx1=((useX*col)+useX)-10;
+    var ly1=((useY*row)+useY)-10;
+    
+    var leftLine= new Line(lx,ly,lx1,ly1);
+    leftLine.setColor(Color.black)
+    leftLine.setLineWidth(2)
+    add(leftLine);
+    
+    var rx=((useX*col)+useX)-10;
+    var ry=(useY*row)+10;
+    var rx1=((useX*col))+10;
+    var ry1=((useY*row)+useY)-10;
+    var rightLine= new Line(rx,ry,rx1,ry1);
+    rightLine.setColor(Color.black)
+    rightLine.setLineWidth(2)
+    add(rightLine);
+    
+    track.set(row,col,0)
+}
+
+function drawO(row, col){
+    var x=((getWidth()/3)*col)+(getWidth()/6);
+    var y=((getHeight()/3)*row)+(getHeight()/6);
+    var outCirc= new Circle(50);
+    outCirc.setPosition(x,y);
+    outCirc.setColor(Color.white);
+    outCirc.setBorderWidth(5)
+    track.set(row,col,1)
+    add(outCirc);
+}
+
+function winnerInRow(row){
+    rcheck=false;
+    if(track.get(row,0)==track.get(row,1)){
+        if(track.get(row,1)==track.get(row,2)){
+            rcheck=true;
+        }
+    }
+    if(rcheck==true){
+        if(row==0){
+            var winLine=new Line(10,getHeight()/6,getWidth()-10,getHeight()/6);
+            winLine.setColor(Color.red);
+            winLine.setLineWidth(15);
+            add(winLine);
+        }
+        if(row==1){
+            var winLine=new Line(10,(getHeight()/6)*3,getWidth()-10,(getHeight()/6)*3);
+            winLine.setColor(Color.red);
+            winLine.setLineWidth(15);
+            add(winLine);
+        }
+        if(row==2){
+            var winLine=new Line(10,(getHeight()/6)*5,getWidth()-10,(getHeight()/6)*5);
+            winLine.setColor(Color.red);
+            winLine.setLineWidth(15);
+            add(winLine);
+        }
+        
+    }
+    return rcheck;
+}
+
+function winnerInCol(col){
+    ccheck=false;
+    if(track.get(0,col)==track.get(1,col)){
+        if(track.get(1,col)==track.get(2,col)){
+            ccheck=true;
+        }
+    }
+    
+    if(ccheck==true){
+        if(col==0){
+            var winLine=new Line(getWidth()/6,10,getWidth()/6,getHeight()-10);
+            winLine.setColor(Color.red);
+            winLine.setLineWidth(15);
+            add(winLine);
+        }
+        if(col==1){
+            var winLine=new Line((getWidth()/6)*3,10,(getWidth()/6)*3,getHeight()-10);
+            winLine.setColor(Color.red);
+            winLine.setLineWidth(15);
+            add(winLine);
+        }
+        if(col==2){
+            var winLine=new Line((getWidth()/6)*5,10,(getWidth()/6)*5,getHeight()-10);
+            winLine.setColor(Color.red);
+            winLine.setLineWidth(15);
+            add(winLine);
+        }
+        
+    }
+    return ccheck;
+}
+
+function winnerInDownDiagonal(){
+    ddcheck=false;
+	    if(track.get(0,0)==track.get(1,1)&&track.get(0,0)!=null){
+	        if(track.get(1,1)==track.get(2,2)){
+	            ddcheck=true;
+	    }
+    }
+	
+	if(ddcheck==true){
+        var winLine=new Line(10,10,getWidth()-10,getHeight()-10);
+        winLine.setColor(Color.red);
+        winLine.setLineWidth(15);
+        add(winLine);
+	}
+	return ddcheck;
+}
+
+function winnerInUpDiagonal(){
+    udcheck=false;
+	    if(track.get(2,0)==track.get(1,1)&&track.get(2,0)!=null){
+	        if(track.get(1,1)==track.get(0,2)){
+	            udcheck=true;
+	    }
+    }
+    
+    if(udcheck==true){
+        var winLine=new Line(getWidth()-10,10,10,getHeight()-10);
+        winLine.setColor(Color.red);
+        winLine.setLineWidth(15);
+        add(winLine);
+	}
+	return udcheck;
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+
+
+</body></html>

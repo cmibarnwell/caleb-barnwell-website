@@ -1,0 +1,260 @@
+<html><head>
+<title>Breakout</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/d5c1a44dd3ae43c90bd2218af268a0c9c01cb08e/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Breakout</h1>
+
+
+
+<canvas width="400" height="500" class="codehs-editor-canvas"></canvas>
+
+
+<script>
+window.onload = function() {
+
+    /* Constants for bricks */
+var NUM_ROWS = 8;
+var BRICK_TOP_OFFSET = 10;
+var BRICK_SPACING = 2;
+var NUM_BRICKS_PER_ROW = 10;
+var BRICK_HEIGHT = 10;
+var SPACE_FOR_BRICKS = getWidth() - (NUM_BRICKS_PER_ROW + 1) * BRICK_SPACING;
+var BRICK_WIDTH = SPACE_FOR_BRICKS / NUM_BRICKS_PER_ROW;
+var rowCount=0;
+var dx=4;
+var dy=4;
+var elem1,elem2,ballX,ballY,paddleY,ball,paddle,rowY,blueBrick,greenBrick,orangeBrick,redBrick,life,score;
+var pause=false;
+var lifeCount=3;
+var scoreCount=0;
+
+/* Constants for ball and paddle */
+var PADDLE_WIDTH = 80;
+var PADDLE_HEIGHT = 15;
+var PADDLE_OFFSET = 10;
+
+var BALL_RADIUS = 15;
+
+function start(){
+    redBrickDraw();
+    orangeBrickDraw();
+    greenBrickDraw();
+    blueBrickDraw();
+    paddleMaker();
+    ballMaker();
+    textMaker();
+    setTimer(ballMove,20);
+    mouseMoveMethod(paddleMover);
+    mouseClickMethod(pauser);
+}  
+
+function redBrickDraw(){
+    for(var i=0;i<NUM_BRICKS_PER_ROW;i++){
+        redBrick=new Rectangle(BRICK_WIDTH, BRICK_HEIGHT);
+        var topRowY=BRICK_TOP_OFFSET;
+        var redX=(BRICK_WIDTH*i)+(BRICK_SPACING*(i+1));
+        redBrick.setColor(Color.red);
+        redBrick.setPosition(redX,topRowY);
+        add(redBrick);
+    }
+    rowCount++;
+    for(var i=0;i<NUM_BRICKS_PER_ROW;i++){
+        redBrick=new Rectangle(BRICK_WIDTH, BRICK_HEIGHT);
+        rowY=BRICK_TOP_OFFSET+BRICK_SPACING+BRICK_HEIGHT;
+        var X=(BRICK_WIDTH*i)+(BRICK_SPACING*(i+1));
+        redBrick.setColor(Color.red);
+        redBrick.setPosition(X,rowY);
+        add(redBrick);
+    }
+    rowCount++;
+    return rowCount;
+   
+}
+
+function orangeBrickDraw(){
+    for(var f=0;f<2;f++){
+        rowY=BRICK_TOP_OFFSET+(BRICK_SPACING*rowCount)+(BRICK_HEIGHT*rowCount);
+        for(var i=0;i<NUM_BRICKS_PER_ROW;i++){
+            orangeBrick=new Rectangle(BRICK_WIDTH, BRICK_HEIGHT);
+            var X=(BRICK_WIDTH*i)+(BRICK_SPACING*(i+1));
+            orangeBrick.setColor(Color.orange);
+            orangeBrick.setPosition(X,rowY);
+            add(orangeBrick);
+        }
+        rowCount++;
+    }
+    return rowCount;
+}
+
+function greenBrickDraw(){
+    for(var f=0;f<2;f++){
+        rowY=BRICK_TOP_OFFSET+(BRICK_SPACING*rowCount)+(BRICK_HEIGHT*rowCount);
+        for(var i=0;i<NUM_BRICKS_PER_ROW;i++){
+            greenBrick=new Rectangle(BRICK_WIDTH, BRICK_HEIGHT);
+            var X=(BRICK_WIDTH*i)+(BRICK_SPACING*(i+1));
+            greenBrick.setColor(Color.green);
+            greenBrick.setPosition(X,rowY);
+            add(greenBrick);
+        }
+        rowCount++;
+    }
+    return rowCount;
+}
+
+function blueBrickDraw(){
+    for(var f=0;f<2;f++){
+        rowY=BRICK_TOP_OFFSET+(BRICK_SPACING*rowCount)+(BRICK_HEIGHT*rowCount);
+        for(var i=0;i<NUM_BRICKS_PER_ROW;i++){
+            blueBrick=new Rectangle(BRICK_WIDTH, BRICK_HEIGHT);
+            var X=(BRICK_WIDTH*i)+(BRICK_SPACING*(i+1));
+            blueBrick.setColor(Color.blue);
+            blueBrick.setPosition(X,rowY);
+            add(blueBrick);
+        }
+        rowCount++;
+    }
+    return rowCount;
+}
+
+function paddleMaker(){
+    paddle= new Rectangle(PADDLE_WIDTH,PADDLE_HEIGHT);
+    paddleY= getHeight()-PADDLE_OFFSET-PADDLE_HEIGHT;
+    var paddleX= (getWidth()/2)-(PADDLE_WIDTH/2)
+    paddle.setPosition(paddleX,paddleY);
+    paddle.setColor(Color.black);
+    add(paddle);
+    return paddleY
+}
+
+function paddleMover(e){
+    if(pause==false){
+        if(e.getX()>0 && e.getX()<(getWidth()-PADDLE_WIDTH)){
+            paddle.setPosition(e.getX(),paddleY);
+        }
+    }
+}
+
+function ballMaker(){
+    ball= new Circle(BALL_RADIUS);
+    ball.setColor(Color.black);
+    ballX=getWidth()/2-(BALL_RADIUS/2);
+    ballY=getHeight()/2-(BALL_RADIUS/2);
+    ball.setPosition(ballX,ballY);
+    add(ball);
+    return ballX,ballY;
+}
+
+function ballMove(){
+    if(lifeCount==0){
+        gameOverMaker();
+    }
+    if(pause==false){
+        var elem1Y=ball.getY()+BALL_RADIUS;
+        if(elem1Y>getHeight()){
+            ballReset();
+        }
+        checkWalls();
+        var elemX=ball.getX();
+        var elem2Y=ball.getY()-BALL_RADIUS;
+        elem1=getElementAt(elemX,elem1Y)
+        elem2=getElementAt(elemX,elem2Y)
+        elemCheck();
+        ball.move(dx, dy);
+    }
+    
+}
+
+
+function elemCheck(){
+    if(elem1||elem2 != null){
+        if(elem1==paddle){
+            dy=-dy
+        }else if(elem1||elem2==life){
+            
+        }else if(elem1||elem2==score){
+            
+        }else{
+            dy=-dy;
+            remove(elem2);
+            scoreCount+=10;
+            score.setText("Score: "+scoreCount);
+        }
+    }
+}
+
+function checkWalls(){
+    if(ball.getX() + ball.getRadius() > getWidth()){
+        dx = -dx;
+    }
+    if(ball.getX() - ball.getRadius() < 0){
+        dx = -dx;
+    }
+    if(ball.getY() - ball.getRadius() < 0){
+        dy = -dy;
+    }
+}
+
+function ballReset(){
+    pause=!pause
+    ball.setPosition(ballX,ballY);
+    lifeCount--
+    life.setText("Life: "+lifeCount);
+}
+
+function pauser(){
+    pause=!pause
+}
+
+function textMaker(){
+    life= new Text("Life: "+lifeCount);
+    life.setPosition(10,200);
+    score= new Text("Score: "+scoreCount);
+    score.setPosition(10,250);
+    add(score);
+    add(life);
+}
+
+function gameOverMaker(){
+    var cover= new Rectangle(getWidth(),getHeight());
+    cover.setColor(Color.white);
+    cover.setPosition(0,0);
+    add(cover);
+    var overText=new Text("Game Over! Thanks for playing.")
+    overText.setPosition(15,250);
+    overText.setColor(Color.red);
+    add(overText);
+    stopTimer(ballMove);
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+
+</body></html>

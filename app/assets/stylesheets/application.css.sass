@@ -17,6 +17,85 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
 
+/**
+ * Universal
+ * ____________________________________
+ */
+
+html, body
+  height: 100%
+  margin: 0
+
+h1, h3, h2, p, table, figcaption, ul, ol, a, li
+  color: #fff
+
+ul
+  list-style-position: inside
+
+h1
+  text-align: center
+
+body
+  background-color: #141311
+  margin: 0 5%
+
+hr
+  height: 1px
+  border: 0
+  border-top: 3px solid #A2482E
+  margin: 1em 10%
+  width: auto
+
+table
+  color: #fff
+  border: 1px solid white
+  border-collapse: collapse
+
+td
+  color: #fff
+  border: 1px solid white
+  border-collapse: collapse
+
+th
+  color: #fff
+  border: 1px solid white
+  border-collapse: collapse
+
+.hr-minor
+  height: 1px
+  border: 0
+  border-top: 1px solid dimgray
+  margin: 1em 30%
+  width: auto
+
+p
+  margin: 0 15%
+
+/**
+ * Typography
+ * ____________________________________
+ */
+body
+  font-family: 'Montserrat', sans-serif
+  font-size: 1.75em
+  color: #000
+
+h1
+  font-family: 'Montserrat', sans-serif
+  font-size: 3em
+  margin: 2% 0 1%
+
+/**
+ * Navigation
+ * ____________________________________
+ */
+nav
+  background-color: #333
+
+/**
+ * Home
+ * ____________________________________
+ */
 
 .logo
   margin: 5% auto
@@ -31,7 +110,7 @@
     @media screen and (max-width: 780px)
       font-size: 150%
       margin: 0
-    &hover
+    &:hover
       background-color: #fff
       color: #A2482E
 
@@ -40,3 +119,112 @@
     margin: 5%
     height: auto
     width: 60%
+
+.gray
+  background-color: #686766
+
+.headCapt
+  font-family: 'Montserrat', sans-serif
+  font-size: 1em
+  color: #fff
+  text-align: center
+
+/**
+ * About
+ * ____________________________________
+ */
+.ul-center
+  ul
+    width: 40%
+    margin: 0 42.5%
+    text-align: left
+
+
+.projects
+  img
+    position: relative
+    z-index: 1
+
+.size
+  img
+    height: auto
+    width: 40%
+    padding: 1% 0
+
+img.medium
+  height: auto
+  width: 70%
+
+/**
+ * Education
+ * ____________________________________
+ */
+
+
+/**
+ * Footer
+ * ____________________________________
+ */
+
+.wrapper
+  min-height: 75%
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px
+
+
+.push, footer
+  height: 50px
+
+ul.social
+  display: block
+  margin: 2% 0
+  list-style-type: none
+  text-align: center
+
+  li
+    font-size: 2em
+    display: inline
+    padding: 0 2%
+
+    a
+      color: #fff
+      z-index: 1
+      position: relative
+
+ul.social
+  li.twitter
+    a
+      &:hover
+        color: rgb(0,172,237)
+  li.facebook
+    a
+      &:hover
+        color: rgb(59,89,152)
+  li.instagram
+    a
+      &:hover
+        color: rgb(251,173,80)
+  li.github
+    a
+      &:hover
+        color: rgb(0,0,0)
+  li.linkedin
+    a
+      &:hover
+        color: rgb(0,123,182)
+  li.email
+    a
+      &:hover
+        color: rgb(221,75,57)
+
+p.copyright
+  text-align: center
+  color: #ccc
+  font-size: 1em
+
+img.copyright
+  display: block
+  margin-left: auto
+  margin-right: auto
