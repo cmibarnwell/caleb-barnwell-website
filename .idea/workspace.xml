@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8220c836-1fb4-4c1c-b4a7-05898fd6a985" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/google_analytics.js.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_breakout.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_breakout.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -56,8 +55,8 @@
       <file leaf-file-name="_breakout.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_breakout.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+            <state relative-caret-position="40">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -210,8 +209,8 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/articles.sass" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.sass" />
         <option value="$PROJECT_DIR$/app/views/pages/projects.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_breakout.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/google_analytics.js.coffee" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_breakout.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       </list>
     </option>
@@ -825,15 +824,15 @@
       <workItem from="1495928078468" duration="21448000" />
       <workItem from="1496064642091" duration="17747000" />
       <workItem from="1496462413445" duration="3550000" />
-      <workItem from="1496521081147" duration="16522000" />
+      <workItem from="1496521081147" duration="16793000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106446000" />
+    <option name="totallyTimeSpent" value="106717000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1720" y="27" width="1720" height="1364" extended-state="4" />
+    <frame x="1720" y="27" width="1720" height="1364" extended-state="5" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19651163" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1188,10 +1187,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_breakout.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/google_analytics.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+        <state relative-caret-position="800">
+          <caret line="40" column="18" lean-forward="false" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1206,10 +1205,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/google_analytics.js.coffee">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_breakout.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="40" column="18" lean-forward="false" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+        <state relative-caret-position="40">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
