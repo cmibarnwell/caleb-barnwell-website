@@ -8,8 +8,9 @@
   <h2>Breakout</h2>
   <p>(Spring 2016)</p>
   <hr class="hr-minor"/>
-  <%= render 'layouts/breakout' %>
-  <p>Brick-breaker game in JavaScript. (Available to play right now!)</p>
+  <div class="hide-mobile"><%= render 'layouts/breakout' %></div>
+  <div class="show-mobile"><img src="../../../Images/breakout.png"></div>
+  <p>Brick-breaker game in JavaScript.</p>
 
   <hr/>
 
