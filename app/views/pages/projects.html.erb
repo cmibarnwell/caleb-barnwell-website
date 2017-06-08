@@ -9,7 +9,7 @@
   <p>(Spring 2016)</p>
   <hr class="hr-minor"/>
   <div class="hide-mobile"><%= render 'layouts/breakout' %></div>
-  <div class="show-mobile"><img src="../../../Images/breakout.png"></div>
+  <div class="show-mobile"><%= image_tag('breakout.png') %></div>
   <p>Brick-breaker game in JavaScript.</p>
 
   <hr/>
@@ -17,7 +17,7 @@
   <h2 ><a href="../../../content/ticTacToe.html" target="_blank">Tic Tac Toe</a></h2>
   <p>(Spring 2016)</p>
   <hr class="hr-minor"/>
-  <figure><a href="../../../content/ticTacToe.html" target="_blank"><img src="../../../Images/ticTac.png"></a><figcaption><i>In-game View of Play</i></figcaption></figure>
+  <figure><a href="../../../content/ticTacToe.html" target="_blank"><%= image_tag('ticTac.png') %></a><figcaption><i>In-game View of Play</i></figcaption></figure>
   <p>Tic Tac Toe game in JavaScript. (Available to play right now if you click on the "Tic Tac Toe" Title above!)</p>
 
   <hr/>
@@ -32,7 +32,7 @@
 
   <h2><a href="https://devpost.com/software/scavengerhuntvr" target="_blank">ScavengerHuntVR</a></h2>
   <p>(Fall 2016)</p>
-  <figure><a href="https://devpost.com/software/scavengerhuntvr" target="_blank"><img src="../../../Images/Scavenger.png"></a><figcaption><i>A Player Searches for Keys</i></figcaption></figure>
+  <figure><a href="https://devpost.com/software/scavengerhuntvr" target="_blank"><%= image_tag('Scavenger.png') %></a><figcaption><i>A Player Searches for Keys</i></figcaption></figure>
   <p>Collaborative project that received 3rd place at HackRice 2016 and won the Facebook Communication Challenge.</p>
 
   <hr/>
@@ -41,7 +41,7 @@
   <h2><a href="https://devpost.com/software/surviver" target="_blank">SurVIVEr</a></h2>
   <p>(Fall 2016)</p>
   <hr class="hr-minor"/>
-  <figure><a href="https://devpost.com/software/surviver" target="_blank"><img src="../../../Images/surviver.jpg"></a><figcaption><i>A Portion of the Explorable Map</i></figcaption></figure>
+  <figure><a href="https://devpost.com/software/surviver" target="_blank"><%= image_tag('surviver.jpg') %></a><figcaption><i>A Portion of the Explorable Map</i></figcaption></figure>
   <p>Collaborative project that received Best Hardware Hack at CodeRED 2016.</p><br/>
 
   <hr/>
@@ -49,7 +49,7 @@
     <h2>Impulse Meter</h2>
     <p>(Fall 2016)</p>
     <hr class="hr-minor"/>
-    <figure><img src="../../../Images/impulseMeter.jpg"><figcaption><i>Our Impulse Meter</i></figcaption></figure>
+    <figure><%= image_tag('impulseMeter.jpg') %><figcaption><i>Our Impulse Meter</i></figcaption></figure>
     <p>Collaborative project that involved planning using Mechanical Physics and Mathematics to find the simplest way to measure impulse (Change in momentum). Since we measured our
       spring constant before construction, this is performed by using a slow motion camera and observing the distance of the compression of the spring when hit by an object. Next the time until max compression must also be observed. This allows for measuring of impulse with minimal knowledge of variables, including the neglection of mass. We checked our results using conservation of energy and kinematics to compare the theoretical change in momentum.</p>
     <p>Equations used: F = kx, J = F&Delta;t </p><br/>
@@ -59,8 +59,8 @@
   <h2>Personal Computer Building</h2>
   <p>(Fall 2015 to Present)</p>
   <hr class="hr-minor"/>
-  <div class="col-sm-6"><figure><img class="medium" src="../../../Images/pcPic.jpg"><figcaption ><i>My Computer</i></figcaption></figure></div>
-  <div class="col-sm-6"><figure><img class="medium" src="../../../Images/pcPic2.jpg"><figcaption><i>Computer Monitor Setup</i></figcaption></figure></div>
+  <div class="col-sm-6"><figure><%= image_tag('pcPic.jpg', class: 'medium') %><figcaption ><i>My Computer</i></figcaption></figure></div>
+  <div class="col-sm-6"><figure><%= image_tag('pcPic2.jpg', class: 'medium') %><figcaption><i>Computer Monitor Setup</i></figcaption></figure></div>
   <div class="clearfix"></div>
   <br/>
 
@@ -74,8 +74,8 @@
   <h2>Blog Site</h2>
   <p>(Spring 2017)</p>
   <hr class="hr-minor"/>
-  <div class="col-sm-6"><figure><img class="medium" src="../../../Images/blogPic1.png"><figcaption><i>List of Blog Articles</i></figcaption></figure></div>
-  <div class="col-sm-6"><figure><img class="medium" src="../../../Images/blogPic2.png"><figcaption><i>Blog Screen with Comments</i></figcaption></figure></div>
+  <div class="col-sm-6"><figure><%= image_tag('blogPic1.png', class: 'medium') %><figcaption><i>List of Blog Articles</i></figcaption></figure></div>
+  <div class="col-sm-6"><figure><%= image_tag('blogPic2.png', class: 'medium') %><figcaption><i>Blog Screen with Comments</i></figcaption></figure></div>
   <div class="clearfix"></div>
   <br/>
   <p>Created a Blog Website using Ruby, Ruby on Rails, and HTML. Using Rail's database integration, you are able to post new blog articles and make comments to articles along with making deletions. The site will dynamically update. </p>
@@ -86,9 +86,9 @@
   <h2>Server Simulation</h2>
   <p>(Spring 2017)</p>
   <hr class="hr-minor"/>
-  <div class="col-sm-6"><figure><img class="medium" src="../../../Images/simPic1.png"></figure></div>
+  <div class="col-sm-6"><figure><%= image_tag('simPic1.png', class: 'medium') %></figure></div>
 
-  <div class="col-sm-6"><figure><img class="medium" src="../../../Images/simPic2.png"></figure></div>
+  <div class="col-sm-6"><figure><%= image_tag('simPic2.png', class: 'medium') %></figure></div>
   <div class="clearfix"></div>
   <br>
   <figcaption><i>Server Simulation Processing</i></figcaption>
