@@ -38,40 +38,43 @@
     <!-- End Google Analytics -->
 
   </head>
+  <div id="main">
   <%= render 'layouts/navigation' %>
   <div class="clearfix"></div>
   <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQLL68P"
-                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-    <p class="flash"><%= flash.notice %></p>
-    <div class="wrapper">
-      <%= yield %>
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQLL68P"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+        <p class="flash"><%= flash.notice %></p>
 
-      <div class="push"></div>
+        <div class="wrapper">
+          <%= yield %>
+
+          <div class="push"></div>
+        </div>
+        <footer>
+              <hr/>
+              <p class="copyright">Contact/External Websites</p>
+              <hr class="hr-minor"/>
+              <ul class="social">
+                <li class="twitter"><a href="https://twitter.com/CalebBarnwell" target="_blank"><i class="fa fa-twitter-square fa-lg"></i></a></li>
+                <li class="instagram"><a href="https://www.instagram.com/calebbarnwell/" target="_blank"><i class="fa fa-instagram fa-lg"></i></a></li>
+                <li class="linkedin"><a href="https://www.linkedin.com/in/caleb-barnwell" target="_blank"><i class="fa fa-linkedin-square fa-lg"></i></a></li>
+                <li class="github"><a href="https://github.com/cmibarnwell" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
+                <li class="facebook"><a href="https://www.facebook.com/caleb.barnwell" target="_blank"><i class="fa fa-facebook-square fa-lg"></i></a></li>
+                <li class="email"><a href="mailto:calebbarnwell@gmail.com"><i class="fa fa-envelope fa-lg"></i></a></li>
+              </ul>
+              <p class="copyright">
+                <% if logged_in? %>
+                    <%= "Logged in as #{current_user.email}" %>
+                    <%= link_to "(logout)", logout_path %>
+                <% end %>
+              </p>
+
+              <p class="copyright">&copy; Caleb Barnwell <%= Date.today.year %>.</p>
+              <hr class="wide">
+        </footer>
     </div>
-    <footer>
-          <hr/>
-          <p class="copyright">Contact/External Websites</p>
-          <hr class="hr-minor"/>
-          <ul class="social">
-            <li class="twitter"><a href="https://twitter.com/CalebBarnwell" target="_blank"><i class="fa fa-twitter-square fa-lg"></i></a></li>
-            <li class="instagram"><a href="https://www.instagram.com/calebbarnwell/" target="_blank"><i class="fa fa-instagram fa-lg"></i></a></li>
-            <li class="linkedin"><a href="https://www.linkedin.com/in/caleb-barnwell" target="_blank"><i class="fa fa-linkedin-square fa-lg"></i></a></li>
-            <li class="github"><a href="https://github.com/cmibarnwell" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
-            <li class="facebook"><a href="https://www.facebook.com/caleb.barnwell" target="_blank"><i class="fa fa-facebook-square fa-lg"></i></a></li>
-            <li class="email"><a href="mailto:calebbarnwell@gmail.com"><i class="fa fa-envelope fa-lg"></i></a></li>
-          </ul>
-          <p class="copyright">
-            <% if logged_in? %>
-                <%= "Logged in as #{current_user.email}" %>
-                <%= link_to "(logout)", logout_path %>
-            <% end %>
-          </p>
-
-          <p class="copyright">&copy; Caleb Barnwell <%= Date.today.year %>.</p>
-          <hr class="wide">
-    </footer>
   </body>
 </html>

@@ -41,7 +41,6 @@ h1
 
 body
   background-color: #141311
-  margin: 0 5%
   position: relative
 
 hr
@@ -77,6 +76,9 @@ th
 p
   margin: 0 15%
 
+.white
+  color: white
+
 /**
  * Typography
  * ____________________________________
@@ -95,50 +97,98 @@ h1
  * Navigation
  * ____________________________________
  */
-nav
-  a
-    text-decoration: none
-    &:hover
-      text-decoration: none
-    &:active
-      text-decoration: none
-    &:focus
-      text-decoration: none
-      color: #666666
 
 img.nav-logo
   width: 5%
   height: auto
+
+#leftNav
+  height: 100%
+  width: 0
+  position: fixed
+  z-index: 1
+  top: 0
+  left: 0
+  overflow-x: hidden
+  padding-top: 3%
+  transition: .5s
+  background-color: #333
+  line-height: 250%
+
+  a
+    position: relative
+    top: 15%
+    transform: translateY(-50%)
+    padding: 1% 1% 1% 2%
+    text-decoration: none
+    font-size: 25px
+    color: #f2f2f2
+    display: block
+    transition: 0.3s
+
+    &:hover
+      color: #A2482E
+
+#main
+  transition: margin-left .5s
+
+#close
+  margin: 1%
+  margin-right: 2.5%
+  display: none
+  float: right
+  &:hover
+    color: #A2482E
+    cursor: pointer
+
+#open
+  position: fixed
+  top: 1%
+  left: 1%
+  margin: 1%
+  display: inline-block
+  &:hover
+    color: #A2482E
+    cursor: pointer
+
+@media screen and (max-width: 500px)
+  #leftNav
+    a
+      font-size: 18px
+  #open
+    font-size: 150%
+  #close
+    font-size: 150%
+
 /**
  * Home
  * ____________________________________
  */
-
 .logo-word
-  margin: 5% auto
+  margin: 2% 25%
+  border-top: 3px solid #fff
+  border-bottom: 3px solid #fff
   a
     font-size: 3em
     color: #fff
     text-decoration: none
-    border: 3px solid #fff
     padding: 7px 10px 0 10px
     margin: 0 auto
     font-family: 'Cinzel', sans-serif
     @media screen and (max-width: 780px)
       font-size: 150%
-      margin: 0
     &:hover
-      background-color: #fff
       color: #A2482E
 
 .logoImg
   img
-    margin: 5%
     height: auto
     width: 60%
 
-.gray
+.logoBackground
   background-color: #686766
+  padding: 1% 0
+  margin: 2.5% 5%
 
 .headCapt
   font-family: 'Montserrat', sans-serif
@@ -266,13 +316,7 @@ img.copyright
 /* MEDIA QUERIES
  * ____________________________________ */
 
-@media screen and (max-width: 855px)
-  h1
-    padding-top: 10%
-
 @media screen and (max-width: 768px)
-  .logo-word
-    margin-top: 0
   h1
     font-size: 1.5em
   h2
@@ -283,8 +327,6 @@ img.copyright
     padding: 0 10% 0 22.5%
     li
       font-size: 2em
-  .logo-word
-    padding-top: 10%
   img.tiny
     width: 35%
   .hide-mobile
@@ -293,8 +335,6 @@ img.copyright
     display: unset
 
 @media screen and (max-width: 600px)
-  .logo-word
-    padding-top: 15%
   ul.social
     padding: 0 10% 0 15%
     li
@@ -304,10 +344,6 @@ img.copyright
     font-size: .75em
 
 @media screen and (max-width: 430px)
-  h1
-    padding-top: 25%
-  .logo-word
-    padding-top: 25%
   .ul-center
     ul
       width: auto
