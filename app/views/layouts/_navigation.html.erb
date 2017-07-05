@@ -4,21 +4,23 @@
   <div id="leftNav">
     <i class="fa fa-chevron-left fa-2x white" id="close" onclick="closeNav()"></i>
     <div class="clearfix"></div>
-    <%= link_to 'Home', root_path %>
-    <%= link_to 'About', root_url+'pages/about' %>
-    <%= link_to 'Projects', root_url+'pages/projects' %>
-    <%= link_to 'Education', root_url+'pages/education' %>
-    <%= link_to 'Employment', root_url+'pages/employment' %>
-    <%= link_to 'Awards', root_url+'pages/awards' %>
+    <ul>
+    <li><%= active_link_to 'Home', root_path %></li>
+    <li><%= active_link_to 'About', root_url+'pages/about' %></li>
+    <li><%= active_link_to 'Projects', root_url+'pages/projects' %></li>
+    <li><%= active_link_to 'Education', root_url+'pages/education' %></li>
+    <li><%= active_link_to 'Employment', root_url+'pages/employment' %></li>
+    <li><%= active_link_to 'Awards', root_url+'pages/awards' %></li>
     <% if logged_in? %>
         <!--This block is only visible to signed in admins -->
-        <%= link_to 'New Post', new_article_path %>
-        <%= link_to 'Blog', articles_path  %>
-        <%= link_to 'Logout', logout_path %>
+        <li><%= active_link_to 'New Post', new_article_path %></li>
+        <li><%= active_link_to 'Blog', articles_path  %></li>
+        <li><%= active_link_to 'Logout', logout_path %></li>
         <!-- The block ends here -->
     <% else %>
-        <%= link_to 'Blog', articles_path  %>
-        <%= link_to 'Login', login_path  %>
+        <li><%= active_link_to 'Blog', articles_path  %></li>
+        <li><%= active_link_to 'Login', login_path  %></li>
     <% end %>
+    </ul>
   </div>
 </nav>

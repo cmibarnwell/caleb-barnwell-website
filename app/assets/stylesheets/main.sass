@@ -95,19 +95,26 @@ img.nav-logo
   background-color: #333
   line-height: 250%
 
-  a
-    position: relative
-    top: 15%
-    transform: translateY(-50%)
-    padding: 1% 1% 1% 2%
-    text-decoration: none
-    font-size: 25px
-    color: #f2f2f2
-    display: block
-    transition: 0.3s
+  ul
+    margin: 35% 0
+    overflow: scroll
+    li
+      text-decoration: none
+      list-style: none
+      a
+        position: relative
+        padding: 1% 1% 1% 2%
+        text-decoration: none
+        font-size: 25px
+        color: #f2f2f2
+        display: block
+        transition: 0.3s
 
-    &:hover
-      color: #A2482E
+        &:hover
+          color: #A2482E
+
+      .active
+        color: #6e6e6e
 
 #main
   transition: margin-left .5s
@@ -131,14 +138,31 @@ img.nav-logo
     color: #A2482E
     cursor: pointer
 
-@media screen and (max-width: 500px)
+@media screen and (max-width: 600px)
   #leftNav
-    a
-      font-size: 18px
+    ul
+      margin-left: -25%
+      li
+        a
+          font-size: 16px
+
   #open
     font-size: 150%
   #close
     font-size: 150%
+
+@media screen and (min-width: 800px) and (max-width: 1200px)
+  #leftNav
+    ul
+      margin-left: 0
+      li
+        a
+          font-size: 18px
+
+@media screen and (min-width: 600px) and (max-width: 800px)
+  #leftNav
+    ul
+      margin-left: -15%
 
 /**
  * Home

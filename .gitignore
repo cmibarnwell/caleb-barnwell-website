@@ -21,3 +21,4 @@
 .byebug_history
 
 .idea
+!/app/assets/stylesheets/main.sass
