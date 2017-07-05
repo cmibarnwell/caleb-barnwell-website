@@ -84,7 +84,6 @@ img.nav-logo
 
 #leftNav
   height: 100%
-  width: 0
   position: fixed
   z-index: 1
   top: 0
@@ -120,16 +119,9 @@ img.nav-logo
 main
   transition: margin-left .5s
 
-#close
-  margin: 1%
-  margin-right: 2.5%
-  display: none
-  float: right
-  &:hover
-    color: #A2482E
-    cursor: pointer
-
-#open
+#navToggle
+  z-index: 1000000
+  transition: .5s
   position: fixed
   top: 1%
   left: 1%
@@ -147,9 +139,7 @@ main
         a
           font-size: 75%
 
-  #open
-    font-size: 150%
-  #close
+  #navToggle
     font-size: 150%
 
 @media screen and (min-width: 800px) and (max-width: 1200px)
@@ -161,6 +151,30 @@ main
   #leftNav
     ul
       margin-left: -15%
+
+
+nav[data-view = closed]
+  #leftNav
+    width: 0
+
+nav[data-view = open]
+  #leftNav
+    width: 25%
+  #navToggle
+    left: 25%
+
+main[data-view = widened]
+  margin-left: 0
+
+main[data-view = reduced]
+  margin-left: 25%
+
+@media screen and (max-width: 500px)
+  main[data-view = reduced]
+    margin-left: 40%
+  nav[data-view = open]
+    #leftNav
+      width: 40%
 
 /**
  * Home

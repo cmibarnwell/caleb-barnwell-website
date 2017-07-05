@@ -1,8 +1,7 @@
-<nav>
-  <i class="fa fa-bars fa-2x white" id="open" onclick="openNav()"></i>
+<nav data-view = "closed">
+  <i class="fa fa-bars fa-2x white" id="navToggle" onclick="openNav()"></i>
 
   <div id="leftNav">
-    <i class="fa fa-chevron-left fa-2x white" id="close" onclick="closeNav()"></i>
     <div class="clearfix"></div>
     <ul>
     <li><%= active_link_to 'Home', root_path %></li>
