@@ -111,7 +111,7 @@ img.nav-logo
       .active
         color: #6e6e6e
 
-main
+body
   transition: margin-left .5s
 
 #navToggle
@@ -158,14 +158,14 @@ nav[data-view = open]
   #navToggle
     left: 25%
 
-main[data-view = widened]
+body[data-view = widened]
   margin-left: 0
 
-main[data-view = reduced]
+body[data-view = reduced]
   margin-left: 25%
 
 @media screen and (max-width: 500px)
-  main[data-view = reduced]
+  body[data-view = reduced]
     margin-left: 50%
   nav[data-view = open]
     #leftNav

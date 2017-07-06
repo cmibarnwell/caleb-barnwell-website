@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<div class="html-wrapper">
 <html>
   <head>
+    <title><%= yield(:title) %></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -40,18 +40,10 @@
     <!-- End Google Analytics -->
 
   </head>
-  <main data-view="widened">
+  <body data-view="widened">
     <%= render 'layouts/navigation' %>
     <div class="clearfix"></div>
       <div class="content">
-
-        <div class="spinner">
-          <div class="bounce1"></div>
-          <div class="bounce2"></div>
-          <div class="bounce3"></div>
-        </div>
-
-      <body>
           <!-- Google Tag Manager (noscript) -->
           <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQLL68P"
                             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -60,7 +52,5 @@
               <%= yield %>
           </div>
         <%= render 'layouts/footer' %>
-    </body>
-  </main>
+  </body>
 </html>
-</div>
