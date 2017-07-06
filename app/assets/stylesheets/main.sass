@@ -164,7 +164,13 @@ body[data-view = widened]
 body[data-view = reduced]
   margin-left: 25%
 
+@media screen and (max-width: 768px)
+  body[data-view = widened]
+    margin-left: 7.5%
+
 @media screen and (max-width: 500px)
+  body[data-view = widened]
+    margin-left: 10%
   body[data-view = reduced]
     margin-left: 50%
   nav[data-view = open]
@@ -324,7 +330,6 @@ img.copyright
 
 @media screen and (max-width: 768px)
   body
-    margin-left: 7.5%
     overflow-x: hidden
   h1
     font-size: 1.5em
@@ -374,8 +379,6 @@ img.copyright
     font-size: .75em
 
 @media screen and (max-width: 430px)
-  body
-    margin-left: 10%
   .ul-center
     ul
       width: auto
