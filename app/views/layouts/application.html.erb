@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<div class="html-wrapper">
 <html>
   <head>
     <%= csrf_meta_tags %>
@@ -39,42 +40,26 @@
 
   </head>
   <main data-view="widened">
-  <%= render 'layouts/navigation' %>
-  <div class="clearfix"></div>
-  <body>
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQLL68P"
-                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-        <p class="flash"><%= flash.notice %></p>
+    <%= render 'layouts/navigation' %>
+    <div class="clearfix"></div>
+      <div class="content">
 
-        <div class="wrapper">
-          <%= yield %>
-
-          <div class="push"></div>
+        <div class="spinner">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
         </div>
-        <footer>
-              <hr/>
-              <p class="copyright">Contact/External Websites</p>
-              <hr class="hr-minor"/>
-              <ul class="social">
-                <li class="twitter"><a href="https://twitter.com/CalebBarnwell" target="_blank"><i class="fa fa-twitter-square fa-lg"></i></a></li>
-                <li class="instagram"><a href="https://www.instagram.com/calebbarnwell/" target="_blank"><i class="fa fa-instagram fa-lg"></i></a></li>
-                <li class="linkedin"><a href="https://www.linkedin.com/in/caleb-barnwell" target="_blank"><i class="fa fa-linkedin-square fa-lg"></i></a></li>
-                <li class="github"><a href="https://github.com/cmibarnwell" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
-                <li class="facebook"><a href="https://www.facebook.com/caleb.barnwell" target="_blank"><i class="fa fa-facebook-square fa-lg"></i></a></li>
-                <li class="email"><a href="mailto:calebbarnwell@gmail.com"><i class="fa fa-envelope fa-lg"></i></a></li>
-              </ul>
-              <p class="copyright">
-                <% if logged_in? %>
-                    <%= "Logged in as #{current_user.email}" %>
-                    <%= link_to "(logout)", logout_path %>
-                <% end %>
-              </p>
 
-              <p class="copyright">&copy; Caleb Barnwell <%= Date.today.year %>.</p>
-              <hr class="wide">
-        </footer>
-  </body>
+      <body>
+          <!-- Google Tag Manager (noscript) -->
+          <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQLL68P"
+                            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+          <!-- End Google Tag Manager (noscript) -->
+            <p class="flash"><%= flash.notice %></p>
+              <%= yield %>
+          </div>
+        <%= render 'layouts/footer' %>
+    </body>
   </main>
 </html>
+</div>

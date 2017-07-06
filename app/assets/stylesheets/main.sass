@@ -3,10 +3,6 @@
  * ____________________________________
  */
 
-html, body
-  height: 100%
-  margin: 0
-
 h1, h3, h2, p, table, figcaption, ul, ol, a, li
   color: #fff
 
@@ -71,7 +67,6 @@ body
 h1
   font-family: 'Montserrat', sans-serif
   font-size: 3em
-  margin: 2% 0 1%
 
 /**
  * Navigation
@@ -120,13 +115,13 @@ main
   transition: margin-left .5s
 
 #navToggle
-  z-index: 1000000
+  z-index: 2
   transition: .5s
   position: fixed
   top: 1%
   left: 1%
   margin: 1%
-  display: inline-block
+  display: block
   &:hover
     color: #A2482E
     cursor: pointer
@@ -171,10 +166,12 @@ main[data-view = reduced]
 
 @media screen and (max-width: 500px)
   main[data-view = reduced]
-    margin-left: 40%
+    margin-left: 50%
   nav[data-view = open]
     #leftNav
-      width: 40%
+      width: 35%
+    #navToggle
+      left: 35%
 
 /**
  * Home
@@ -265,17 +262,6 @@ img.tiny
  * ____________________________________
  */
 
-.wrapper
-  min-height: 75%
-
-  /* Equal to height of footer */
-  /* But also accounting for potential margin-bottom of last child */
-  margin-bottom: -50px
-
-
-.push, footer
-  height: 50px
-
 ul.social
   display: block
   margin: 2% 0
@@ -333,6 +319,9 @@ img.copyright
  * ____________________________________ */
 
 @media screen and (max-width: 768px)
+  body
+    margin-left: 7.5%
+    overflow-x: hidden
   h1
     font-size: 1.5em
   h2
@@ -350,7 +339,28 @@ img.copyright
   .show-mobile
     display: unset
 
+  table, thead, tbody, th, td, tr
+    display: block
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  .tHead
+    position: absolute
+    top: -9999px
+    left: -9999px
+
+  tr
+    border: 1px solid #ccc
+
+  td
+    /* Behave  like a "row" */
+    border: none
+    border-bottom: 1px solid #eee
+    position: relative
+    padding-left: 50%
+
 @media screen and (max-width: 600px)
+  .headCapt
+    font-size: .75em
   ul.social
     padding: 0 10% 0 15%
     li
@@ -360,6 +370,8 @@ img.copyright
     font-size: .75em
 
 @media screen and (max-width: 430px)
+  body
+    margin-left: 10%
   .ul-center
     ul
       width: auto
