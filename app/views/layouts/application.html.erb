@@ -44,13 +44,15 @@
   <body>
     <%= render 'layouts/navigation' %>
       <main data-view="widened">
+        <div class="content">
           <!-- Google Tag Manager (noscript) -->
           <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQLL68P"
                             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <!-- End Google Tag Manager (noscript) -->
             <p class="flash"><%= flash.notice %></p>
               <%= yield %>
-      </main>
+        </div>
         <%= render 'layouts/footer' %>
+      </main>
   </body>
 </html>

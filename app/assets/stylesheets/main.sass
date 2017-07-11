@@ -26,8 +26,9 @@ hr
   height: 1px
   border: 0
   border-top: 3px solid #A2482E
-  margin: 1em 10%
+  margin: 1em auto
   width: auto
+  max-width: 1500px
 
 table
   color: #fff
@@ -59,7 +60,10 @@ p
   color: white
 
 main
-  min-height: calc(100vh - 30%)
+  height: 100%
+
+.content
+  min-height: calc(100vh - 20%)
   padding-bottom: 2.5%
 
 /**
@@ -119,7 +123,7 @@ img.nav-logo
       .active
         color: #6e6e6e
 
-main, footer
+main
   transition: margin-left .5s
 
 #navToggle
@@ -166,20 +170,20 @@ nav[data-view=open]
   #navToggle
     left: 25%
 
-main[data-view=widened], footer[data-view=widened]
+main[data-view=widened]
   margin-left: 0
 
-main[data-view=reduced], footer[data-view=reduced]
+main[data-view=reduced]
   margin-left: 25%
 
 @media screen and (max-width: 768px)
-  main[data-view=widened], footer[data-view=widened]
+  main[data-view=widened]
     margin-left: 7.5%
 
 @media screen and (max-width: 500px)
-  main[data-view=widened], footer[data-view=widened]
+  main[data-view=widened]
     margin-left: 10%
-  main[data-view=reduced], footer[data-view=reduced]
+  main[data-view=reduced]
     margin-left: 50%
   nav[data-view=open]
     #leftNav
@@ -192,9 +196,10 @@ main[data-view=reduced], footer[data-view=reduced]
  * ____________________________________
  */
 .logo-word
-  margin: 2% 25%
+  margin: 2% auto
   border-top: 3px solid #fff
   border-bottom: 3px solid #fff
+  max-width: 900px
   a
     font-size: 3em
     color: #fff
@@ -215,7 +220,9 @@ main[data-view=reduced], footer[data-view=reduced]
 .logoBackground
   background-color: #686766
   padding: 1% 0
-  margin: 2.5% 5%
+  margin: 2.5% auto
+  max-width: 1200px
+
 
 .headCapt
   font-family: 'Montserrat', sans-serif
@@ -289,12 +296,12 @@ footer
   border-top: 3px solid #A2482E
   border-bottom: 3px solid #A2482E
   width: 80%
-  left: 10%
-  right: 10%
+  max-width: 1300px
+  margin: 0 auto
+
 
 ul.social
-  display: block
-  margin: 2% 0
+  margin: 2% auto
   list-style-type: none
   text-align: center
 
@@ -338,12 +345,6 @@ p.copyright
   text-align: center
   color: #ccc
   font-size: 1em
-
-img.copyright
-  display: block
-  margin-left: auto
-  margin-right: auto
-
 
 /* MEDIA QUERIES
  * ____________________________________ */
