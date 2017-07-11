@@ -39,17 +39,18 @@
     <!-- End Google Analytics -->
 
   </head>
-  <body data-view="widened">
+
+
+  <body>
     <%= render 'layouts/navigation' %>
-    <div class="clearfix"></div>
-      <div class="content">
+      <main data-view="widened">
           <!-- Google Tag Manager (noscript) -->
           <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQLL68P"
                             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <!-- End Google Tag Manager (noscript) -->
             <p class="flash"><%= flash.notice %></p>
               <%= yield %>
-          </div>
+      </main>
         <%= render 'layouts/footer' %>
   </body>
 </html>
