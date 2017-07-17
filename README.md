@@ -1,24 +1,12 @@
-# README
+# My Portfolio Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository holds the code for my portfolio website. This website can be viewed here: https://www.calebbarnwell.com
 
-Things you may want to cover:
+Some details:
 
-* Ruby version
+* Uses Ruby 2.4.0
+* Made on Rails 5
 
-* System dependencies
+Feel free to notify me of any issues you may find, and to use this code as a resource.
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
