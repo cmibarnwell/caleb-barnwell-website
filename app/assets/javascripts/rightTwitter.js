@@ -5,9 +5,8 @@ function openTwit() {
     document.getElementsByTagName("NAV")[0].classList.remove("closedTwit");
     document.getElementsByTagName("NAV")[0].classList.add("openTwit");
     document.getElementById("twitterToggle").setAttribute("onclick", "closeTwit()");
-    //document.getElementsByTagName("MAIN")[0].classList.add("reducedTwit");
-    //document.getElementsByTagName("MAIN")[0].classList.remove("widenedTwit");
     document.getElementsByTagName("MAIN")[0].className = "reducedTwit"
+    document.getElementsByTagName("MAIN")[0].setAttribute("onclick", "closeTwit()");
 }
 
 function closeTwit() {
@@ -16,4 +15,5 @@ function closeTwit() {
     document.getElementById("twitterToggle").setAttribute("onclick", "openTwit()");
     document.getElementsByTagName("MAIN")[0].classList.remove("reducedTwit");
     document.getElementsByTagName("MAIN")[0].classList.add("widenedTwit");
+    document.getElementsByTagName("MAIN")[0].setAttribute("onclick", "");
 }
