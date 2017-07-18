@@ -3,7 +3,9 @@
  */
 /* Set the width of the side navigation to 250px */
 function openNav() {
-    document.getElementById("leftNav").className = "open";
+    closeTwit();
+    document.getElementById("leftNav").classList.remove("closed");
+    document.getElementById("leftNav").classList.add("open");
     document.getElementsByTagName("MAIN")[0].className = "reduced";
     document.getElementsByTagName("MAIN")[0].setAttribute("onclick", "closeNav()");
     document.getElementsByTagName("FOOTER")[0].dataset.view = "reduced";
@@ -16,7 +18,8 @@ function openNav() {
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
-    document.getElementById("leftNav").className = "closed";
+    document.getElementById("leftNav").classList.remove("open");
+    document.getElementById("leftNav").classList.add("closed");
     document.getElementsByTagName("MAIN")[0].className = "widened";
     document.getElementsByTagName("MAIN")[0].setAttribute("onclick", "");
     document.getElementsByTagName("FOOTER")[0].dataset.view = "widened";
