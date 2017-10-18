@@ -1,9 +1,15 @@
-<% content_for(:title, "Caleb Barnwell Tags") %>
+<% content_for(:title, "Caleb Barnwell Blog") %>
 
-<h1>All Tags</h1>
+<h1>Categories</h1>
 
-<ul id="tags">
-  <% @tags.each do |tag| %>
-      <li><%= link_to tag.name, tag_path(tag), class: 'tag_title'%></li>
-  <% end %>
-</ul>
+<div class="list-wrapper">
+  <ul id="tags">
+    <% @tags.each do |tag| %>
+        <li><%= link_to tag.name.capitalize, tag_path(tag), class: 'tag_title'%></li>
+    <% end %>
+  </ul>
+</div>
+
+<h4>
+  <%= link_to "All Articles", articles_path %>
+</h4>

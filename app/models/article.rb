@@ -5,6 +5,10 @@ class Article < ApplicationRecord
   has_attached_file :image
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
 
+  def to_param
+    [id, title.parameterize].join("-")
+  end
+
   def tag_list
     self.tags.collect do |tag|
       tag.name

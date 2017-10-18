@@ -9,5 +9,11 @@ class TagsController < ApplicationController
   end
 
   def destroy
+    @tag = Tag.find(params[:id])
+    @tag.destroy
+
+    flash.notice = "Tag #{@tag.name.capitalize!} Deleted!"
+
+    redirect_to tags_path
   end
 end
