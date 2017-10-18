@@ -16,3 +16,24 @@
 //= require turbolinks
 //= require ckeditor/init
 //= require_tree .
+
+function readyCode(){
+    hljs.initHighlighting.called = false;
+    hljs.initHighlightingOnLoad();
+};
+
+readyMath = function(){
+    if (window.MathJax) {
+        MathJax.Hub.Queue(
+            ["Typeset",MathJax.Hub]
+        );
+    }
+};
+
+document.addEventListener("turbolinks:load", function() {
+    readyMath();
+    //readyCode();
+    $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
+});
