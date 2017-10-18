@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   get 'logout' => 'author_sessions#destroy'
   get '/pages/:page' => 'pages#show'
 
+  mathjax 'mathjax'
+
   root 'pages#show', page: 'home'
 end
