@@ -2,7 +2,13 @@
 <div class="text-center">
 <h1 class="article_header"><%= @article.title %></h1>
 
-<h4>Posted <%= distance_of_time_in_words_to_now(@article.created_at) %> ago.</h4>
+<h4>
+  <% if !(@article.author.nil?) %>
+      <%= "Posted #{distance_of_time_in_words_to_now(@article.created_at)} ago by #{@article.author}"%>
+      <% else %>
+      <%= "Posted #{distance_of_time_in_words_to_now(@article.created_at)} ago"%>
+  <% end %>
+</h4>
 
 <h4>
   Tags:
