@@ -19,11 +19,11 @@
     <% if logged_in? %>
         <!--This block is only visible to signed in admins -->
         <li><%= active_link_to 'New Post', new_article_path %></li>
-        <li><%= active_link_to 'Blog', tags_path  %></li>
+        <li><%= active_link_to 'Blog (Under Maintenance)', tags_path  %></li>
         <li><%= active_link_to 'Logout', logout_path %></li>
         <!-- The block ends here -->
     <% else %>
-        <li><%= active_link_to 'Blog', tags_path  %></li>
+        <li><%= active_link_to 'Blog (Under Maintenance)', tags_path  %></li>
         <li><%= active_link_to 'Login', login_path  %></li>
     <% end %>
     </ul>
